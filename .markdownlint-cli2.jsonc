@@ -1,0 +1,17 @@
+{
+  // Documentation lint gate for the seven-file research documentation system.
+  // Real defects (broken table cells, unlabelled fences, emphasis-as-heading,
+  // list spacing) were fixed in the documents themselves, not suppressed here.
+  // Only two table-formatting conventions are declared off, with reasons:
+  "config": {
+    // MD013 line-length: these documents are table-heavy comparison specs.
+    // Wrapping cells at 80 chars would make tables unreadable and would break
+    // the ID-per-row structure the traceability requires.
+    "MD013": false,
+
+    // MD060 table-column-style: existing tables use a single consistent style
+    // ("| a | b |" with "|---|" separators). MD060's default expects a padded
+    // variant; re-padding 300+ rows would add churn with no information gain.
+    "MD060": false
+  }
+}
